@@ -1,9 +1,8 @@
 {
-  "name": "aka",
+  "name": "@brandonli8/aka",
   "version": "0.0.0",
-  "description": "Self-hosted url-shortener.",
+  "description": "A simple, private URL shortener/bookkeeper that is hosted locally. ",
   "type": "module",
-  "private": true,
   "devDependencies": {
     "nodemon": "^2.0.7"
   },
