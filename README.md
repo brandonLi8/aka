@@ -7,6 +7,9 @@
 !*-->
 
 # AKA
+![npm](https://img.shields.io/npm/v/@brandonli8/aka)
+![GitHub](https://img.shields.io/github/license/brandonli8/aka)
+
 AKA is a simple, **private** URL shortener/bookkeeper for **personal use** that is hosted locally.
 
 For example, the URL `https://long-domain.com/foo/`, can be shortened to `aka/foo`.
@@ -54,8 +57,6 @@ This will allow you to add, update, or delete routes and URLS.
 ## How It Works.
 
 ## Get Involved
-Contact me via <a href="mailto:brandon.li@berkeley.edu" target="_blank"> email</a>.
-
 Help improve **AKA** by creating a <a href="https://github.com/brandonLi8/aka/issues" target="_blank">New Issue</a>.
 
 <sub>Copyright © Brandon Li. All Rights Reserved.&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;See the <a href="https://github.com/brandonLi8/aka/blob/master/LICENSE" target="_blank">LICENSE</a> (MIT).</sub>
