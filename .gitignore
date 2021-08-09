@@ -1,0 +1,54 @@
+# Copyright © Brandon Li. All rights reserved.
+
+#!————————————————————————————————————————————————————————————————————————————*!
+# Specifies files and directories to not check into git.
+#
+# @author Brandon Li <brandon.li@berkeley.edu>
+#!————————————————————————————————————————————————————————————————————————————*!
+
+## IDE specific
+*.iml
+*.sublime-project
+*.sublime-workspace
+.idea
+.vscode
+
+## Node
+*.lcov
+*.log
+*.pid
+*.pid.lock
+*.seed
+*.tgz
+.cache
+.env
+.env.test
+.grunt
+.next
+.npm
+node_modules
+npm-debug.log*
+
+## Yarn
+yarn-debug.log*
+yarn-error.log*
+
+## Apple
+.apdisk
+.AppleDB
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+## Eslint
+*.eslintcache
+eslint/cache
+
+## Other
+*.lcov
+.grunt
+.nyc_output
+coverage
