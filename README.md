@@ -50,13 +50,16 @@ This will run in a background process so you _don't_ have to keep the tab open.
 #### Add Your First Bookmark
 Type in `aka/admin` in your browser. 
 
-TODO: screenshot
+<img src='https://raw.githubusercontent.com/brandonLi8/aka/master/screenshot.png' alt='Screenshot' style='width: 400px;'/>
 
 This will allow you to add, update, or delete routes and URLS.
 
 ## How It Works.
+AKA is a simple, lightweight [express](https://expressjs.com/) application that works by keeping track of a table of routes and URLS. This table is simply stored on disk in `urls.local.json`, and cached in-memory for high lookup performance. 
+
+AKA uses [foreverjs](https://www.npmjs.com/package/forever) to run continuously in the background. 
 
 ## Get Involved
-Help improve **AKA** by creating a <a href="https://github.com/brandonLi8/aka/issues" target="_blank">New Issue</a>.
+Help improve **AKA** by creating a <a href='https://github.com/brandonLi8/aka/issues' target='_blank'>New Issue</a>.
 
-<sub>Copyright © Brandon Li. All Rights Reserved.&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;See the <a href="https://github.com/brandonLi8/aka/blob/master/LICENSE" target="_blank">LICENSE</a> (MIT).</sub>
+<sub>Copyright © Brandon Li. All Rights Reserved.&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;See the <a href='https://github.com/brandonLi8/aka/blob/master/LICENSE' target='_blank'>LICENSE</a> (MIT).</sub>
