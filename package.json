@@ -1,7 +1,7 @@
 {
   "name": "@brandonli8/aka",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple, private URL shortener/bookkeeper that is hosted locally.",
   "author": {
     "name": "Brandon Li",
