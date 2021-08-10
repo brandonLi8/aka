@@ -7,8 +7,8 @@
 !*-->
 
 # AKA
-![npm](https://img.shields.io/npm/v/@brandonli8/aka)
-![GitHub](https://img.shields.io/github/license/brandonli8/aka)
+[![npm](https://img.shields.io/npm/v/@brandonli8/aka)](https://www.npmjs.com/package/@brandonli8/aka)
+[![Github](https://img.shields.io/github/license/brandonli8/aka)](https://github.com/brandonLi8/aka/blob/master/LICENSE)
 
 AKA is a simple, **private** URL shortener/bookkeeper for **personal use** that is hosted locally.
 
