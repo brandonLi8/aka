@@ -27,6 +27,18 @@ Instead of interacting with the GUI on the website to find the settings page, I 
 
 ## Try It!
 
+#### Deploying to Heroku
+
+```
+heroku create
+git push heroku master
+heroku open
+```
+
+Alternatively, you can deploy your own copy of the app using this button:
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 #### Installation
 To install and set up AKA, run:
 ```bash
