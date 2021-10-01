@@ -1,0 +1,9 @@
+{
+  "name": "AKA",
+  "description": "A simple, private URL shortener/bookkeeper that is hosted locally.",
+  "website": "http://rubyonrails.org",
+  "success_url": "/",
+  "env": {
+    "NODE_ENV": "production"
+  },
+}
