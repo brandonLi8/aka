@@ -9,6 +9,7 @@
 # AKA
 [![npm](https://img.shields.io/npm/v/@brandonli8/aka)](https://www.npmjs.com/package/@brandonli8/aka)
 [![Github](https://img.shields.io/github/license/brandonli8/aka)](https://github.com/brandonLi8/aka/blob/master/LICENSE)
+[![Heroku](https://img.shields.io/badge/%E2%86%91_Deploy_to-Heroku-7056bf.svg)](https://heroku.com/deploy)
 
 AKA is a simple, **private** URL shortener/bookkeeper for **personal use** that is hosted locally.
 
