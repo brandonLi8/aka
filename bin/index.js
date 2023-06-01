@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Copyright © 2021 Brandon Li. All rights reserved.
+// Copyright © 2021-2023-2023 Brandon Li. All rights reserved.
 
 /**
  * The CLI for AKA.
