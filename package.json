@@ -21,12 +21,12 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "app-root-path": "^3.1.0",
     "body-parser": "^1.19.0",
     "commander": "^8.1.0",
     "express": "^4.17.1",
     "forever": "^4.0.1",
     "http-status-codes": "^2.1.4",
+    "level": "^8.0.0",
     "tcp-port-used": "^1.0.2"
   },
   "bugs": {
