@@ -7,13 +7,43 @@
 !*-->
 
 <!DOCTYPE html>
-
-<html lang='en'>
+<html>
   <head>
-    <title> Admin </title>
-    <script src='index.js'></script>
-    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <title>AKA Admin</title>
+
+    <!-- lodash - for de-bouncing -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" defer></script>
+
+    <!-- React and ReactDOM -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js" defer></script>
+
+    <!-- Axios for making HTTP requests -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" defer></script>
+
+    <!-- Babel Standalone for JSX compilation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" defer></script>
+
+    <!-- Material-UI core -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :focus {
+          outline: none;
+        }
+    </style>
   </head>
-  <body class='mx-4'>
+  <body id="root">
+    <!-- Scripts -->
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="./api.js" defer></script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="./components/Cell.jsx" defer></script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="./components/Table.jsx" defer></script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="./components/App.jsx" defer></script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel">
+      import App from './components/App';
+
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
   </body>
 </html>
