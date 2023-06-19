@@ -29,10 +29,13 @@ function App() {
   };
 
   return (
-    <div class='mx-4'>
-      <button onClick={addRow} className='btn btn-outline-success btn-sm my-3'>
-        Add Route
-      </button>
+    <div class='m-4'>
+      <div className='d-inline-flex flex-column'>
+        <img src='/admin/assets/aka-logo.svg' width='120rem'/>
+        <button onClick={addRow} className='btn btn-outline-success btn-sm my-3'>
+          Add Bookmark
+        </button>
+      </div>
       <Table
         bookmarks={bookmarks}
         onBookmarkUpdate={updateBookmark}
