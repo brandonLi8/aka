@@ -13,7 +13,7 @@
     <picture>
       <source srcset="https://raw.githubusercontent.com/brandonLi8/aka/master/lib/views/admin/assets/aka-logo.svg" width="30%" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
       <source srcset="https://raw.githubusercontent.com/brandonLi8/aka/master/lib/views/admin/assets/aka-logo-dark.svg" width="30%" media="(prefers-color-scheme: dark)" />
-      <img/>
+      <img src="https://raw.githubusercontent.com/brandonLi8/aka/master/lib/views/admin/assets/aka-logo.svg" width="30%"/>
     </picture>
 </p>
 <br>
