@@ -3,12 +3,31 @@
 <!--
  * README.md
  *
- * @author Brandon Li <brandon.li@berkeley.edu>
+ * @author Brandon Li <brandon.li@berkeley.edou>
 !*-->
 
-# AKA
-[![npm](https://img.shields.io/npm/v/@brandonli8/aka)](https://www.npmjs.com/package/@brandonli8/aka)
-[![Github](https://img.shields.io/github/license/brandonli8/aka)](https://github.com/brandonLi8/aka/blob/master/LICENSE)
+<br>
+<br>
+<br>
+<p align="center">
+    <picture>
+      <source srcset="https://raw.githubusercontent.com/brandonLi8/aka/master/lib/views/admin/assets/aka-logo.svg" width="30%" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+      <source srcset="https://raw.githubusercontent.com/brandonLi8/aka/master/lib/views/admin/assets/aka-logo-dark.svg" width="30%" media="(prefers-color-scheme: dark)" />
+      <img/>
+    </picture>
+</p>
+<br>
+<br>
+<p align="center">
+  <a href="https://www.npmjs.com/package/@brandonli8/aka" target="_blank">
+    <img src="https://img.shields.io/npm/v/@brandonli8/aka?style=flat-square&logoColor=eceff4&colorA=4c566a&colorB=8FBCBB"/>
+  </a>
+  <a href="https://github.com/brandonLi8/aka/blob/master/LICENSE" target="_blank">
+    <img src="https://img.shields.io/github/license/brandonli8/aka?style=flat-square&logoColor=eceff4&colorA=4c566a&colorB=8FBCBB"/>
+  </a>
+</p>
+
+_________________
 
 AKA is a simple, **private** URL shortener/bookkeeper for **personal use** that is hosted locally.
 
