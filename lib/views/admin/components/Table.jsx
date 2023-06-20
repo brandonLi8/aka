@@ -18,7 +18,7 @@ import Cell from './Cell';
  */
 export default function Table({ bookmarks, onBookmarkUpdate, onBookmarkDelete }) {
   return (
-    <table className='table table-sm table-striped'>
+    <table className='table table-sm border rounded border-2' style={{ borderCollapse: 'separate', borderSpacing: '0px' }}>
       <thead>
         <tr>
           <th>Route</th>
@@ -43,7 +43,7 @@ export default function Table({ bookmarks, onBookmarkUpdate, onBookmarkDelete })
               <button
                 className='btn'
                 onMouseDown={() => onBookmarkDelete(bookmark)}
-                style={{ border: '0px', '--bs-btn-hover-color': '#dc3545' }}
+                style={{ border: '0px', '--bs-btn-hover-color': '#dc3545', width: '10px' }}
               >
                 <i className='fa fa-trash' />
               </button>

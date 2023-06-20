@@ -13,7 +13,7 @@
   </g>
 
   <!-- K -->
-  <g transform="translate(100, 0)">
+  <g transform="translate(120, 0)">
     <path fill="#8FBCBB" d="M0 0l63.56 63.87L0 127.44V0z" />
     <path fill="#4c566a" d="M0 0h127.14L63.56 63.87 0 0z" />
     <path fill="#8FBCBB" d="M127.14 127.44H0l63.56-63.57 63.58 63.57z" />

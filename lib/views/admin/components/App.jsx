@@ -8,12 +8,12 @@
 
 // modules
 import Table from './Table';
+import NavBar from './NavBar';
 import { getBookmarks, createBookmark, updateBookmark, deleteBookmark } from '../api'
 
 function App() {
+  // Bookmarks
   const [bookmarks, setBookmarks] = React.useState([]);
-
-  // Fetch all the bookmarks first
   React.useEffect(async () => setBookmarks(await getBookmarks()), []);
 
   // Adds a row to the table
@@ -29,18 +29,19 @@ function App() {
   };
 
   return (
-    <div class='m-4'>
-      <div className='d-inline-flex flex-column'>
-        <img src='/admin/assets/aka-logo.svg' width='120rem'/>
+    <div>
+      <NavBar/>
+      <div className='my-4 mx-5'>
         <button onClick={addRow} className='btn btn-outline-success btn-sm my-3'>
           Add Bookmark
         </button>
+        <Table
+          bookmarks={bookmarks}
+          onBookmarkUpdate={updateBookmark}
+          onBookmarkDelete={deleteRow}
+          className='border'
+        />
       </div>
-      <Table
-        bookmarks={bookmarks}
-        onBookmarkUpdate={updateBookmark}
-        onBookmarkDelete={deleteRow}
-      />
     </div>
   );
 }
