@@ -72,6 +72,7 @@ export default function Cell({ value, live = true, onUpdate, prefix = '' }) {
             onBlur={() => setFocus(false)}
             onKeyPress={e => { e.key === 'Enter' && e.preventDefault(); }}
             onInput={handleChange}
+            onPaste={e => { e.preventDefault(); document.execCommand('insertText', false, e.clipboardData.getData('text/plain')); }}
             className={'p-0' + (prefix ? ' d-inline' : '')}
             ref={inputRef}
           >
@@ -80,10 +81,10 @@ export default function Cell({ value, live = true, onUpdate, prefix = '' }) {
         </span>
 
         {/* Display the status of the update */}
-        <div style={{ width: '1rem' }} className='mx-2'>
+        <div style={{ width: '1.3rem' }} className='mx-2'>
           {isUpdating && <i className='align-baseline fa fa-spinner fa-spin text-secondary' />}
           {showCheckmark && <i className='align-baseline fa fa-check-circle text-success' />}
-          {showError && <i className='align-baseline fa fa-times-circle text-danger' />}
+          {showError && <i className='align-baseline fas fa-exclamation-circle text-danger' />}
         </div>
       </div>
     </td>

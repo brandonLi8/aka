@@ -31,16 +31,20 @@ function App() {
   return (
     <div>
       <NavBar/>
-      <div className='my-4 mx-5'>
-        <button onClick={addRow} className='btn btn-outline-success btn-sm my-3'>
-          Add Bookmark
-        </button>
-        <Table
-          bookmarks={bookmarks}
-          onBookmarkUpdate={updateBookmark}
-          onBookmarkDelete={deleteRow}
-          className='border'
-        />
+      <div className='content'>
+        <div className='my-2 mx-5'>
+          <button onClick={addRow} className='btn btn-outline-success btn-sm my-3 py-2'>
+            Add Bookmark
+          </button>
+          <div className='card py-3 px-4 border rounded border-1'>
+            <Table
+              bookmarks={bookmarks}
+              onBookmarkUpdate={updateBookmark}
+              onBookmarkDelete={deleteRow}
+              className='border'
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

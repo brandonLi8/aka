@@ -18,12 +18,12 @@ import Cell from './Cell';
  */
 export default function Table({ bookmarks, onBookmarkUpdate, onBookmarkDelete }) {
   return (
-    <table className='table table-sm border rounded border-2' style={{ borderCollapse: 'separate', borderSpacing: '0px' }}>
+    <table className='table' style={{ borderCollapse: 'separate', borderSpacing: '0px' }}>
       <thead>
         <tr>
-          <th>Route</th>
+          <th className='col-md-5'>Route</th>
           <th>URL</th>
-          <th></th>
+          <th style={{ width: '50px' }}></th>
         </tr>
       </thead>
       <tbody>
@@ -43,9 +43,10 @@ export default function Table({ bookmarks, onBookmarkUpdate, onBookmarkDelete })
               <button
                 className='btn'
                 onMouseDown={() => onBookmarkDelete(bookmark)}
-                style={{ border: '0px', '--bs-btn-hover-color': '#dc3545', width: '10px' }}
+                style={{ border: '0px', '--bs-btn-hover-color': 'rgb(var(--bs-danger-rgb))', width: '10px' }}
+                title='Delete bookmark'
               >
-                <i className='fa fa-trash' />
+                <i className='fas fa-trash' />
               </button>
             </td>
           </tr>

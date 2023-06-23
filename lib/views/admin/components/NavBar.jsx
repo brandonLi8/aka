@@ -46,22 +46,24 @@ function NavBar() {
     <nav
       className={'navbar bg-body px-5 sticky-top' + (scrolled ? ' shadow-sm' : '')}
       style={{
-        height: scrolled ? '5em' : '7em',
+        height: scrolled ? '4em' : '6em',
         transition: 'height 250ms ease-in-out 0s, box-shadow 250ms ease-in-out 0s'
       }}
     >
-      {/* logo */}
-      <a class='navbar-brand' href='#'>
-        <img src={COLOR_MODE_TO_LOGO[colorMode]} width='140rem' className='d-block'/>
-      </a>
+      <div className='content d-flex align-items-center justify-content-between'>
+        {/* logo */}
+        <a class='navbar-brand' href='#'>
+          <img src={COLOR_MODE_TO_LOGO[colorMode]} width='120rem' className='d-block'/>
+        </a>
 
-      {/* color mode toggle */}
-      <button
-        onClick={() => setColorMode(toggleColorMode(colorMode)) }
-        className='btn btn-outline-secondary btn-sm'
-      >
-        <i className={`fa ${COLOR_MODE_TO_ICON[colorMode]}`} style={{ width: '17px' }}/>
-      </button>
+        {/* color mode toggle */}
+        <button
+          onClick={() => setColorMode(toggleColorMode(colorMode)) }
+          className='btn btn-outline-secondary btn-sm'
+        >
+          <i className={`fa ${COLOR_MODE_TO_ICON[colorMode]}`} style={{ width: '17px' }}/>
+        </button>
+      </div>
     </nav>
   );
 }
