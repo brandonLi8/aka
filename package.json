@@ -13,13 +13,18 @@
     "aka": "./bin/index.js"
   },
   "scripts": {
-    "dev": "node lib/index.js"
+    "dev": "node lib/index.js",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brandonLi8/aka.git"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "eslint-plugin-react": "^7.32.2"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "commander": "^8.1.0",

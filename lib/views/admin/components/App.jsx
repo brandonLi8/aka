@@ -9,7 +9,7 @@
 // modules
 import Table from './Table';
 import NavBar from './NavBar';
-import { getBookmarks, createBookmark, updateBookmark, deleteBookmark } from '../api'
+import { getBookmarks, createBookmark, updateBookmark, deleteBookmark } from '../api';
 
 function App() {
   // Bookmarks
@@ -20,13 +20,13 @@ function App() {
   async function addRow() {
     let { bookmark } = await createBookmark();
     setBookmarks(bookmarks => [...bookmarks, bookmark]);
-  };
+  }
 
   // Deletes a row in the table
   async function deleteRow(bookmark) {
     await deleteBookmark(bookmark);
     setBookmarks(bookmarks => bookmarks.filter(b => b.id !== bookmark.id));
-  };
+  }
 
   return (
     <div>

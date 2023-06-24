@@ -48,13 +48,20 @@ export default function Dropdown({ options, value, onUpdate, title }) {
     };
   }, []);
 
+
+  const icons = {
+    'url': (<i className='fa fa-link me-1' />),
+    'file':  (<i className='far fa-folder me-1' />),
+  };
+
   return (
     <div
-      className='dropdown me-2'
+      className='dropdown'
       ref={dropdownRef}
       style={{
         position: 'relative',
         display: 'inline-block',
+        marginRight: '-0.7rem'
       }}
     >
       <div
@@ -66,7 +73,11 @@ export default function Dropdown({ options, value, onUpdate, title }) {
           cursor: 'pointer',
         }}
       >
-        {selectedOption}
+        <small>
+          {selectedOption}
+          {icons[selectedOption]}
+
+        </small>
       </div>
       {isOpen && (
         <div
@@ -80,7 +91,7 @@ export default function Dropdown({ options, value, onUpdate, title }) {
           }}
         >
           {options.map((option) => (
-            <div
+            <small
               key={option}
               className='dropdown-item'
               onClick={() => handleOptionSelect(option)}
@@ -89,7 +100,7 @@ export default function Dropdown({ options, value, onUpdate, title }) {
               }}
             >
               {option}
-            </div>
+            </small>
           ))}
         </div>
       )}

@@ -25,7 +25,7 @@ export default function TextInput({ value, onUpdate, is_valid = true, prefix = '
    * Debounced update function that waits for a specific time period before calling the onUpdate callback.
    */
   const debouncedUpdate = React.useCallback(
-    _.debounce(async (newValue) => {
+    _.throttle(async (newValue) => {
       const { success } = await onUpdate(newValue);
 
       // Update is over
@@ -41,7 +41,7 @@ export default function TextInput({ value, onUpdate, is_valid = true, prefix = '
         setShowError(true);
       }
 
-    }, 1000),
+    }, 700),
     [onUpdate]
   );
 
@@ -58,7 +58,6 @@ export default function TextInput({ value, onUpdate, is_valid = true, prefix = '
 
   return (
     <div className='d-flex align-items-center'>
-      { children }
 
       {/* Display the value input */}
       <span
@@ -90,6 +89,7 @@ export default function TextInput({ value, onUpdate, is_valid = true, prefix = '
         {showCheckmark && <i className='align-baseline fa fa-check-circle text-success' />}
         {showError && <i className='align-baseline fas fa-exclamation-circle text-danger' />}
       </div>
+      { children }
     </div>
   );
 }

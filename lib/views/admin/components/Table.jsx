@@ -13,7 +13,7 @@ import Dropdown from './Dropdown';
 /**
  * @param {
  *  bookmarks: Bookmark[] - the bookmarks for this table to display
- *  onBookmarkUpdate: async function(bookmark: Bookmark): { success: bool} - called when the table updates a bookmark
+ *  onBookmarkUpdate: async function(bookmark: Bookmark): { success: bool } - called when the table updates a bookmark
  *  onBookmarkDelete: async function(bookmark: Bookmark) - called when the table's delete button is pressed
  * }
  */
@@ -32,26 +32,28 @@ export default function Table({ bookmarks, onBookmarkUpdate, onBookmarkDelete })
           <tr key={bookmark.id}>
 
             {/* route field */}
-            <td valid='middle'>
+            <td valign='middle'>
               <TextInput
                 value={bookmark.route}
                 live={bookmark.live}
                 onUpdate={value => onBookmarkUpdate({ id: bookmark.id, route: value })}
                 prefix='aka/'
-              />
+              >
+                <Dropdown
+                  options={['url', 'file']}
+                  value={bookmark.resourceType}
+                  onUpdate={value => onBookmarkUpdate({ id: bookmark.id, resourceType: value })}
+                  title='Resource Type'
+                />
+              </TextInput>
             </td>
 
             {/* location field */}
-            <td valid='middle'>
+            <td valign='middle'>
               <TextInput
-                value={bookmark.url}
-                onUpdate={value => onBookmarkUpdate({ id: bookmark.id, url: value })}
+                value={bookmark.location}
+                onUpdate={value => onBookmarkUpdate({ id: bookmark.id, location: value })}
               >
-                <Dropdown
-                  options={["one", "one hella long"]}
-                  selectedOption={"one"}
-                  onSelect={() => {}}
-                />
               </TextInput>
             </td>
 
