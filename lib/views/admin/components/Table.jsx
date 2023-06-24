@@ -7,7 +7,8 @@
  */
 
 // modules
-import Cell from './Cell';
+import TextInput from './TextInput';
+import Dropdown from './Dropdown';
 
 /**
  * @param {
@@ -22,23 +23,39 @@ export default function Table({ bookmarks, onBookmarkUpdate, onBookmarkDelete })
       <thead>
         <tr>
           <th className='col-md-5'>Route</th>
-          <th>URL</th>
+          <th>Location</th>
           <th style={{ width: '50px' }}></th>
         </tr>
       </thead>
       <tbody>
         {bookmarks.map(bookmark => (
           <tr key={bookmark.id}>
-            <Cell
-              value={bookmark.route}
-              live={bookmark.live}
-              onUpdate={value => onBookmarkUpdate({ id: bookmark.id, route: value })}
-              prefix='aka/'
-            />
-            <Cell
-              value={bookmark.url}
-              onUpdate={value => onBookmarkUpdate({ id: bookmark.id, url: value })}
-            />
+
+            {/* route field */}
+            <td valid='middle'>
+              <TextInput
+                value={bookmark.route}
+                live={bookmark.live}
+                onUpdate={value => onBookmarkUpdate({ id: bookmark.id, route: value })}
+                prefix='aka/'
+              />
+            </td>
+
+            {/* location field */}
+            <td valid='middle'>
+              <TextInput
+                value={bookmark.url}
+                onUpdate={value => onBookmarkUpdate({ id: bookmark.id, url: value })}
+              >
+                <Dropdown
+                  options={["one", "one hella long"]}
+                  selectedOption={"one"}
+                  onSelect={() => {}}
+                />
+              </TextInput>
+            </td>
+
+            {/* delete button field */}
             <td valign='middle'>
               <button
                 className='btn'

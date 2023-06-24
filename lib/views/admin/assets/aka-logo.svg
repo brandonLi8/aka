@@ -1,33 +1,39 @@
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 125">
+  <defs>
+    <clipPath id="clip">
+      <rect x="0" width="120" y="0" height="135"/>
+    </clipPath>
+  </defs>
+
   <!-- A -->
-    <g>
-    <path fill="#8FBCBB" d="M0 127.44h50.38l47.07-83.06L72.27 0 0 127.44z" />
+  <g clip-path="url(#clip)">
+    <path fill="#3A556A" d="M0 127.44h50.38l47.07-83.06L72.27 0 0 127.44z" />
     <path
-      fill="#4c566a"
+      fill="#A9B9C8"
       d="M144.83 127.44H94.45L47.08 44.38 72.27 0l72.56 127.44z"
     />
     <path
-      fill="#4c566a"
+      fill="#A9B9C8"
       d="M72.27 88.76l25.18-44.38L72.27 0 47.08 44.38l25.19 44.38z"
     />
   </g>
 
   <!-- K -->
   <g transform="translate(120, 0)">
-    <path fill="#8FBCBB" d="M0 0l63.56 63.87L0 127.44V0z" />
-    <path fill="#4c566a" d="M0 0h127.14L63.56 63.87 0 0z" />
-    <path fill="#8FBCBB" d="M127.14 127.44H0l63.56-63.57 63.58 63.57z" />
+    <path fill="#3A556A" d="M0 0l63.56 63.87L0 127.44V0z" />
+    <path fill="#A9B9C8" d="M0 0h127.14L63.56 63.87 0 0z" />
+    <path fill="#3A556A" d="M127.14 127.44H0l63.56-63.57 63.58 63.57z" />
   </g>
 
   <!-- A -->
   <g transform="translate(200, 0)">
-    <path fill="#8FBCBB" d="M0 127.44h50.38l47.07-83.06L72.27 0 0 127.44z" />
+    <path fill="#3A556A" d="M0 127.44h50.38l47.07-83.06L72.27 0 0 127.44z" />
     <path
-      fill="#4c566a"
+      fill="#A9B9C8"
       d="M144.83 127.44H94.45L47.08 44.38 72.27 0l72.56 127.44z"
     />
     <path
-      fill="#4c566a"
+      fill="#A9B9C8"
       d="M72.27 88.76l25.18-44.38L72.27 0 47.08 44.38l25.19 44.38z"
     />
   </g>
