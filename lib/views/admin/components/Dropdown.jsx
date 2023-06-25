@@ -12,22 +12,24 @@
  *    value: string - the initial value of the drop-down
  *    onUpdate - called when value is updated
  *    title - hover title
+ *    icons - map of option to font-awesome icon
  * }}
  */
-export default function Dropdown({ options, value, onUpdate, title }) {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedOption, setSelectedOption] = React.useState(value);
+export default function Dropdown({
+  options,
+  initialValue,
+  onUpdate,
+  title,
+  icons
+}) {
+  const [ isOpen, setIsOpen ] = React.useState(false);
+  const [ selectedOption, setSelectedOption ] = React.useState(initialValue);
 
   // Handler for option selection
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
     onUpdate(option);
     setIsOpen(false);
-  };
-
-  // Toggle dropdown visibility
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
   };
 
   // Ref for dropdown container
@@ -48,35 +50,27 @@ export default function Dropdown({ options, value, onUpdate, title }) {
     };
   }, []);
 
-
-  const icons = {
-    'url': (<i className='fa fa-link me-1' />),
-    'file':  (<i className='far fa-folder me-1' />),
-  };
-
   return (
     <div
-      className='dropdown'
+      className='dropdown me-2'
       ref={dropdownRef}
       style={{
         position: 'relative',
-        display: 'inline-block',
-        marginRight: '-0.7rem'
+        display: 'inline-block'
       }}
     >
       <div
         className='dropdown-toggle py-0 px-2 rounded-3'
-        onClick={toggleDropdown}
+        onClick={() => setIsOpen(!isOpen)}
         title={title}
         style={{
           backgroundColor: 'var(--bs-border-color)',
-          cursor: 'pointer',
+          cursor: 'pointer'
         }}
       >
         <small>
           {selectedOption}
-          {icons[selectedOption]}
-
+          <i className={icons[selectedOption]} />
         </small>
       </div>
       {isOpen && (
@@ -87,7 +81,7 @@ export default function Dropdown({ options, value, onUpdate, title }) {
             top: '100%',
             left: '0',
             zIndex: '1',
-            display: 'initial',
+            display: 'initial'
           }}
         >
           {options.map((option) => (
@@ -96,7 +90,7 @@ export default function Dropdown({ options, value, onUpdate, title }) {
               className='dropdown-item'
               onClick={() => handleOptionSelect(option)}
               style={{
-                cursor: 'pointer',
+                cursor: 'pointer'
               }}
             >
               {option}

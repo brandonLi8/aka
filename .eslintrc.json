@@ -12,7 +12,8 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
     "React": "readonly",
-    "axios": "readonly"
+    "axios": "readonly",
+    "_": "readonly"
   },
   "parserOptions": {
     "ecmaVersion": 2022,

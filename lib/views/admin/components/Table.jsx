@@ -9,6 +9,7 @@
 // modules
 import TextInput from './TextInput';
 import Dropdown from './Dropdown';
+import Cell, { CellStatus } from './Cell';
 
 /**
  * @param {
@@ -22,7 +23,7 @@ export default function Table({ bookmarks, onBookmarkUpdate, onBookmarkDelete })
     <table className='table' style={{ borderCollapse: 'separate', borderSpacing: '0px' }}>
       <thead>
         <tr>
-          <th className='col-md-5'>Route</th>
+          <th className='col-md-4'>Route</th>
           <th>Location</th>
           <th style={{ width: '50px' }}></th>
         </tr>
@@ -32,42 +33,59 @@ export default function Table({ bookmarks, onBookmarkUpdate, onBookmarkDelete })
           <tr key={bookmark.id}>
 
             {/* route field */}
-            <td valign='middle'>
-              <TextInput
-                value={bookmark.route}
-                live={bookmark.live}
-                onUpdate={value => onBookmarkUpdate({ id: bookmark.id, route: value })}
-                prefix='aka/'
-              >
-                <Dropdown
-                  options={['url', 'file']}
-                  value={bookmark.resourceType}
-                  onUpdate={value => onBookmarkUpdate({ id: bookmark.id, resourceType: value })}
-                  title='Resource Type'
+            <Cell
+              onUpdate={onBookmarkUpdate}
+              initialStatus={bookmark.live ? CellStatus.LOADING : new CellStatus.ERROR('duplicate route')}
+            >
+              {(status, handleUpdate) => (
+                <TextInput
+                  value={bookmark.route}
+                  onUpdate={value => handleUpdate({ id: bookmark.id, route: value })}
+                  status={status}
+                  prefix='aka/'
                 />
-              </TextInput>
-            </td>
+              )}
+            </Cell>
 
             {/* location field */}
-            <td valign='middle'>
-              <TextInput
-                value={bookmark.location}
-                onUpdate={value => onBookmarkUpdate({ id: bookmark.id, location: value })}
-              >
-              </TextInput>
-            </td>
+            <Cell onUpdate={onBookmarkUpdate}>
+              {(status, handleUpdate) => (
+                <div className='d-flex align-items-center'>
+                  <Dropdown
+                    options={[ 'url', 'file' ]}
+                    initialValue={bookmark.resourceType}
+                    onUpdate={value => handleUpdate({ id: bookmark.id, resourceType: value })}
+                    title='Resource Type'
+                    icons={{
+                      url: 'fa fa-link ms-1',
+                      file: 'far fa-folder ms-1'
+                    }}
+                  />
+                  <TextInput
+                    value={bookmark.location}
+                    onUpdate={value => handleUpdate({ id: bookmark.id, location: value })}
+                    status={status}
+                  />
+                </div>
+              )}
+            </Cell>
+
 
             {/* delete button field */}
-            <td valign='middle'>
-              <button
-                className='btn'
-                onMouseDown={() => onBookmarkDelete(bookmark)}
-                style={{ border: '0px', '--bs-btn-hover-color': 'rgb(var(--bs-danger-rgb))', width: '10px' }}
-                title='Delete bookmark'
-              >
-                <i className='fas fa-trash' />
-              </button>
-            </td>
+            <Cell onUpdate={_.identity}>
+              {(status, handleUpdate) => (
+                <button
+                  className='btn'
+                  onMouseDown={() => onBookmarkDelete(bookmark)}
+                  style={{ 'border': '0px', '--bs-btn-hover-color': 'rgb(var(--bs-danger-rgb))', 'width': '10px' }}
+                  title='Delete bookmark'
+                >
+                  <i className='fas fa-trash' />
+                </button>
+              )}
+            </Cell>
+
+
           </tr>
         ))}
       </tbody>

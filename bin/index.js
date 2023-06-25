@@ -28,7 +28,7 @@ program
   .option('-d, --data-dir <path>', 'path for storing the application data (default: $HOME/.aka/data)')
   .action(({ dataDir }) => {
     process.env.DATA_DIR = process.env.DATA_DIR || dataDir || DEFAULT_DATA_DIR;
-    start()
+    start();
   });
 
 program
@@ -51,7 +51,7 @@ program
       uid: 'aka',
       outFile: path.join(logDir, 'aka.out'),
       errFile: path.join(logDir, 'aka.err'),
-      logFile: path.join(logDir, 'aka.log'),
+      logFile: path.join(logDir, 'aka.log')
     });
 
     console.log('Running in background process. Visit aka/ in your browser');
@@ -61,6 +61,7 @@ program
   .command('stop')
   .description('run the aka server continuously in the background.')
   .action(async () => {
+
     // Ensure that the server is running.
     if (!(await util.promisify(forever.list)(false) || []).find(process => process.uid === 'aka')) {
       return console.error('aka is not running. Use `aka start` to start it.');
@@ -70,4 +71,4 @@ program
     console.log('Stopped.');
   });
 
-program.parse(process.argv)
+program.parse(process.argv);

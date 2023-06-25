@@ -32,7 +32,9 @@
     "forever": "^4.0.1",
     "http-status-codes": "^2.1.4",
     "level": "^8.0.0",
-    "tcp-port-used": "^1.0.2"
+    "open": "^9.1.0",
+    "tcp-port-used": "^1.0.2",
+    "uninstall": "0.0.0"
   },
   "bugs": {
     "url": "https://github.com/brandonLi8/aka/issues",
