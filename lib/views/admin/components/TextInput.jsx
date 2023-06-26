@@ -14,13 +14,15 @@ import { CellStatus } from './Cell';
  *    onUpdate - called when input value is updated
  *    status - the status of the cell
  *    [prefix=''] - un-editable prefix displayed to the left of the input value
+ *    [plaeholder=''] - placeholder text displayed when there is nothing in the input
  * }}
  */
 export default function TextInput({
   value,
   onUpdate,
   status,
-  prefix = ''
+  prefix = '',
+  placeholder = ''
 }) {
   const [ focus, setFocus ] = React.useState(false);
   const inputRef = React.createRef();
@@ -51,6 +53,7 @@ export default function TextInput({
           }}
           className={'p-0' + (prefix ? ' d-inline' : '')}
           ref={inputRef}
+          data-placeholder={placeholder}
         >
           {value}
         </div>

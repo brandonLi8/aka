@@ -11,6 +11,7 @@
   <head>
     <meta charset="UTF-8">
     <title>AKA Admin</title>
+    <link rel="icon" href="assets/aka-logo.svg" sizes="any" type="image/svg+xml">
 
     <!-- lodash - for de-bouncing -->
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" defer></script>
@@ -36,6 +37,11 @@
           max-width: 1600px;
           width: 100%;
           margin: 0 auto;
+        }
+        [contenteditable=true]:empty:not(:focus):before{
+          content: attr(data-placeholder);
+          color: var(--bs-secondary-color);
+          font-style: italic;
         }
     </style>
   </head>

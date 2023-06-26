@@ -17,20 +17,21 @@ import {
 // constants
 const COLOR_MODE_TO_LOGO = {
   [ColorModePreference.DARK]: '/admin/assets/aka-logo-dark.svg',
-  [ColorModePreference.LIGHT]: '/admin/assets/aka-logo.svg',
+  [ColorModePreference.LIGHT]: '/admin/assets/aka-logo.svg'
 };
 const COLOR_MODE_TO_ICON = {
   [ColorModePreference.DARK]: 'fa-sun',
-  [ColorModePreference.LIGHT]: 'fa-moon',
+  [ColorModePreference.LIGHT]: 'fa-moon'
 };
 
 function NavBar() {
+
   // Color mode (dark-mode) functionality
-  const [colorMode, setColorMode] = React.useState(getColorModePreference());
+  const [ colorMode, setColorMode ] = React.useState(getColorModePreference());
   updateColorMode(colorMode);
 
   // Shrink nav-bar on scroll.
-  const [scrolled, setScrolled] = React.useState(false);
+  const [ scrolled, setScrolled ] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +53,7 @@ function NavBar() {
     >
       <div className='content d-flex align-items-center justify-content-between'>
         {/* logo */}
-        <a class='navbar-brand' href='#'>
+        <a className='navbar-brand' href='#'>
           <img src={COLOR_MODE_TO_LOGO[colorMode]} width='120rem' className='d-block'/>
         </a>
 

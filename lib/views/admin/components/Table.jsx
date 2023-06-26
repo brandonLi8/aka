@@ -49,25 +49,33 @@ export default function Table({ bookmarks, onBookmarkUpdate, onBookmarkDelete })
 
             {/* location field */}
             <Cell onUpdate={onBookmarkUpdate}>
-              {(status, handleUpdate) => (
-                <div className='d-flex align-items-center'>
-                  <Dropdown
-                    options={[ 'url', 'file' ]}
-                    initialValue={bookmark.resourceType}
-                    onUpdate={value => handleUpdate({ id: bookmark.id, resourceType: value })}
-                    title='Resource Type'
-                    icons={{
-                      url: 'fa fa-link ms-1',
-                      file: 'far fa-folder ms-1'
-                    }}
-                  />
-                  <TextInput
-                    value={bookmark.location}
-                    onUpdate={value => handleUpdate({ id: bookmark.id, location: value })}
-                    status={status}
-                  />
-                </div>
-              )}
+              {(status, handleUpdate) => {
+                const [ resourceType, setResourceType ] = React.useState(bookmark.resourceType);
+
+                return (
+                  <div className='d-flex align-items-center'>
+                    <Dropdown
+                      options={[ 'url', 'file' ]}
+                      initialValue={bookmark.resourceType}
+                      onUpdate={value => {
+                        setResourceType(value);
+                        handleUpdate({ id: bookmark.id, resourceType: value });
+                      }}
+                      title='Resource Type'
+                      icons={{
+                        url: 'fa fa-link ms-1',
+                        file: 'far fa-folder ms-1'
+                      }}
+                    />
+                    <TextInput
+                      value={bookmark.location}
+                      onUpdate={value => handleUpdate({ id: bookmark.id, location: value })}
+                      status={status}
+                      placeholder={resourceType === 'url' ? 'Enter URL' : 'Enter file path'}
+                    />
+                  </div>
+                );
+              }}
             </Cell>
 
 
